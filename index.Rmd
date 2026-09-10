@@ -14,7 +14,7 @@ output:
 </center>
 
 # Hey!
-## About me
+## About me!
 
 - I am **Valeria**<br>
 Happy to be here!<br>
