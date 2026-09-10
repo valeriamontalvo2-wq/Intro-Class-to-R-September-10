@@ -1,0 +1,31 @@
+---
+title: "First R Markdown towards personal webpage"
+author: "Valeria Montalvo Rivera"
+date: "`r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+<center>
+<img src="IMG_6324.jpeg" width="350" height="260"/>
+<img src="IMG_5270.jpeg" width="350" height="260"/>
+</center>
+
+# Hey!
+## About me
+
+- I am **Valeria**<br>
+Happy to be here!<br>
+I'm a **Biology Graduate student** with a concentration in **Botany** from the University of Puerto Rico. My thesis involves the study of the endemic plant *Morella holdridgeana*, a woody shrub belonging to the wax-myrtle family *Myricaceae*. My hobbies include reading, painting and finding the cutest coffee shops, and my favorite food is eggplant lasagna. **:) <3**
+
+## Practicando para hacer una lista
++ Shopping list
+  - Oranges
+  - Apples 
+  - Plantillas de harina 
+
+
+
+
