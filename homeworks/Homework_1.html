@@ -351,14 +351,87 @@ display: none;
 
 <h1 class="title toc-ignore">R Tutorial Homework 1</h1>
 <h4 class="author">Valeria Montalvo Rivera</h4>
-<h4 class="date">2026-Sep-17, 06:20 PM</h4>
+<h4 class="date">2026-Sep-18, 10:21 AM</h4>
 
 </div>
 
 
-<div id="hola-valeria" class="section level1">
-<h1>Hola Valeria</h1>
-</div>
+<p>Beginning of tutorial:</p>
+<p>Assigning values:</p>
+<p>Q1. Create an object called height with the value 175. Print it.
+(Crea un objeto llamado height con el valor 175. Muéstralo en
+pantalla.)</p>
+<pre class="r"><code>height &lt;- 175
+height</code></pre>
+<pre><code>## [1] 175</code></pre>
+<p>Simple math:</p>
+<p>Q2. Calculate the result of 25 * 4 - 10. (Calcula el resultado de 25
+* 4 - 10.)</p>
+<pre class="r"><code>25*4 - 10</code></pre>
+<pre><code>## [1] 90</code></pre>
+<p>Using functions:</p>
+<p>Q3. Use the function sqrt() to calculate the square root of 81. (Usa
+la función sqrt() para calcular la raíz cuadrada de 81.)</p>
+<pre class="r"><code>sqrt(81)</code></pre>
+<pre><code>## [1] 9</code></pre>
+<p>Character objects:</p>
+<p>Q4. Assign the phrase “R is fun!” to an object called message. Print
+it. (Asigna la frase “R is fun!” a un objeto llamado message.
+Muéstralo.)</p>
+<pre class="r"><code>message &lt;- &quot;R is fun!&quot;
+message </code></pre>
+<pre><code>## [1] &quot;R is fun!&quot;</code></pre>
+<p>Object manipulation:</p>
+<p>Q5. Create two objects a &lt;- 10 and b &lt;- 5. Calculate their sum
+and store it in c. (Crea dos objetos a &lt;- 10 y b &lt;- 5. Calcula su
+suma y guárdala en c.)</p>
+<pre class="r"><code>a &lt;- 10
+b &lt;- 5
+c &lt;- a + b 
+c</code></pre>
+<pre><code>## [1] 15</code></pre>
+<p>Logical comparison:</p>
+<p>Q6. Test whether 15 is greater than 20. (Verifica si 15 es mayor que
+20.)</p>
+<pre class="r"><code>15 &gt; 20</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<p>Checking classes:</p>
+<p>Q7. Check the class of the object “Hello World”. (Verifica la clase
+del objeto “Hello World”.)</p>
+<pre class="r"><code>class(&quot;Hello World&quot;)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Code chunk options:</p>
+<p>Q8. Run the following code chunk:</p>
+<ul>
+<li>Observe the warnings that appear. (Observa las advertencias que
+aparecen.)</li>
+<li>Modify the chunk options to suppress warnings without changing the
+code itself. (Modifica las opciones del chunk para apagar la advertencia
+sin cambiar el código.)</li>
+</ul>
+<pre class="r"><code>log(-1) </code></pre>
+<pre><code>## [1] NaN</code></pre>
+<p>Code chunk options:</p>
+<p>Q9. Run the following code chunk: - Observe the messages that appear.
+(Observa los mensajes que aparecen.)</p>
+<p>Modify the chunk options to suppress messages without changing the
+code itself. (Modifica las opciones del chunk para apagar mensajes sin
+cambiar el código.)</p>
+<pre class="r"><code># Load a package (may produce messages)
+library(dplyr)</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.5.3</code></pre>
+<p>Creating and analyzing a vector:</p>
+<p>Q10. Create a numeric vector called grades containing the values 80,
+90, 75, 95, and 85. Then, use the mean() function to calculate the
+average grade and store the result in an object called average. Print
+the result.mean().) (Crea un vector numérico llamado grades que contenga
+los valores 80, 90, 75, 95 y 85. Luego, utiliza la función mean() para
+calcular el promedio y guarda el resultado en un objeto llamado average.
+Muestra el resultado en pantalla.)</p>
+<pre class="r"><code>grades &lt;- c(80, 90, 75, 95, 85)
+average &lt;- mean(grades)
+average</code></pre>
+<pre><code>## [1] 85</code></pre>
 
 
 

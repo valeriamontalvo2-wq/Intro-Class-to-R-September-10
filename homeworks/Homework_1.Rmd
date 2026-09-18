@@ -4,4 +4,108 @@ author: "Valeria Montalvo Rivera"
 date: "`r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
 ---
 
-# Hola Valeria
+Beginning of tutorial:
+
+Assigning values: 
+
+Q1. Create an object called height with the value 175. Print it. (Crea un objeto llamado height con el valor 175. Muéstralo en pantalla.)
+
+```{r}
+height <- 175
+height
+```
+
+Simple math: 
+
+Q2. Calculate the result of 25 * 4 - 10. (Calcula el resultado de 25 * 4 - 10.)
+
+```{r}
+25*4 - 10
+```
+
+Using functions: 
+
+Q3. Use the function sqrt() to calculate the square root of 81. (Usa la función sqrt() para calcular la raíz cuadrada de 81.)
+
+```{r}
+sqrt(81)
+```
+
+Character objects: 
+
+Q4. Assign the phrase “R is fun!” to an object called message. Print it. (Asigna la frase “R is fun!” a un objeto llamado message. Muéstralo.)
+
+```{r}
+message <- "R is fun!"
+message 
+```
+
+Object manipulation: 
+
+Q5. Create two objects a <- 10 and b <- 5. Calculate their sum and store it in c. (Crea dos objetos a <- 10 y b <- 5. Calcula su suma y guárdala en c.)
+
+```{r}
+a <- 10
+b <- 5
+c <- a + b 
+c
+```
+
+Logical comparison: 
+
+Q6. Test whether 15 is greater than 20. (Verifica si 15 es mayor que 20.)
+
+```{r}
+15 > 20
+```
+
+Checking classes: 
+
+Q7. Check the class of the object "Hello World". (Verifica la clase del objeto "Hello World".)
+
+```{r}
+class("Hello World")
+```
+
+Code chunk options: 
+
+Q8. Run the following code chunk:
+
+- Observe the warnings that appear. (Observa las advertencias que aparecen.)
+- Modify the chunk options to suppress warnings without changing the code itself. (Modifica las opciones del chunk para apagar la advertencia sin cambiar el código.)
+
+```{r, warning = FALSE}
+log(-1) 
+```
+
+Code chunk options: 
+
+Q9. Run the following code chunk: 
+- Observe the messages that appear. (Observa los mensajes que aparecen.)
+
+Modify the chunk options to suppress messages without changing the code itself. (Modifica las opciones del chunk para apagar mensajes sin cambiar el código.)
+
+```{r, message = FALSE}
+# Load a package (may produce messages)
+library(dplyr)
+```
+
+Creating and analyzing a vector: 
+
+Q10. Create a numeric vector called grades containing the values 80, 90, 75, 95, and 85. 
+Then, use the mean() function to calculate the average grade and store the result in an object called average. 
+Print the result.mean().) 
+(Crea un vector numérico llamado grades que contenga los valores 80, 90, 75, 95 y 85. Luego, utiliza la función mean() para calcular el promedio y guarda el resultado en un objeto llamado average. Muestra el resultado en pantalla.)
+
+```{r}
+grades <- c(80, 90, 75, 95, 85)
+average <- mean(grades)
+average
+```
+
+
+
+
+
+
+
