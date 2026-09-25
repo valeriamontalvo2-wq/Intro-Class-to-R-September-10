@@ -351,12 +351,229 @@ display: none;
 
 <h1 class="title toc-ignore">R Tutorial Homework 2</h1>
 <h4 class="author">Valeria Montalvo Rivera</h4>
-<h4 class="date">2026-Sep-24, 05:10 PM</h4>
+<h4 class="date">2026-Sep-25, 12:52 PM</h4>
 
 </div>
 
 
-<p>hola jijij</p>
+<p>Beginning of tutorial:</p>
+<p>Checking if I have necessary packages:</p>
+<pre class="r"><code># install.packages(&quot;gapminder&quot;)
+library(gapminder)</code></pre>
+<pre><code>## Warning: package &#39;gapminder&#39; was built under R version 4.5.3</code></pre>
+<pre class="r"><code># install.packages(&quot;dplyr&quot;)
+library(dplyr)</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.5.3</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<p>Checking out the data:</p>
+<pre class="r"><code>data(gapminder)
+head(gapminder)</code></pre>
+<pre><code>## # A tibble: 6 × 6
+##   country     continent  year lifeExp      pop gdpPercap
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
+## 1 Afghanistan Asia       1952    28.8  8425333      779.
+## 2 Afghanistan Asia       1957    30.3  9240934      821.
+## 3 Afghanistan Asia       1962    32.0 10267083      853.
+## 4 Afghanistan Asia       1967    34.0 11537966      836.
+## 5 Afghanistan Asia       1972    36.1 13079460      740.
+## 6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
+<p>Q1. What class is the gapminder dataset? Q1. ¿Qué clase es el dataset
+gapminder?</p>
+<p>The gapminder dataset falls into three types of categories: a tibble
+data frame, a tibble and a data frame.</p>
+<pre class="r"><code>class(gapminder)</code></pre>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<p>Q2. Filter a section of gapminder with a life expectancy smaller than
+29. Q2. Filtrar una sección de gapminder con esperanza de vida menor a
+29.</p>
+<pre class="r"><code># La funcion filter es de dplyr y es para filas
+# Esto es una manera de hacer subsets por fila
+# Tengo que coger los que tengan un life expectancy menor a 29
+
+only_29 &lt;- gapminder |&gt; 
+  filter(lifeExp &lt; 29)
+only_29</code></pre>
+<pre><code>## # A tibble: 2 × 6
+##   country     continent  year lifeExp     pop gdpPercap
+##   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;
+## 1 Afghanistan Asia       1952    28.8 8425333      779.
+## 2 Rwanda      Africa     1992    23.6 7290203      737.</code></pre>
+<p>Q3. Filter the dataset for the country Rwanda and for years greater
+than 1979. Q3 Filtrar el dataset para el país Ruanda y para años mayores
+a 1979.</p>
+<pre class="r"><code>only_Rwanda_1979 &lt;- gapminder |&gt; 
+  filter(country == &quot;Rwanda&quot;, 
+         year &gt; 1979)
+only_Rwanda_1979</code></pre>
+<pre><code>## # A tibble: 6 × 6
+##   country continent  year lifeExp     pop gdpPercap
+##   &lt;fct&gt;   &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;
+## 1 Rwanda  Africa     1982    46.2 5507565      882.
+## 2 Rwanda  Africa     1987    44.0 6349365      848.
+## 3 Rwanda  Africa     1992    23.6 7290203      737.
+## 4 Rwanda  Africa     1997    36.1 7212583      590.
+## 5 Rwanda  Africa     2002    43.4 7852401      786.
+## 6 Rwanda  Africa     2007    46.2 8860588      863.</code></pre>
+<p>Q4. Create a new dataset from gapminder excluding the column
+gdpPercap. Q4 Crear un nuevo dataset a partir de gapminder excluyendo la
+columna gdpPercap.</p>
+<pre class="r"><code># Para seleccionar todos las columnas excepto una en particular usando lenguaje dplyr debo usar select y !
+except_gdp &lt;- gapminder |&gt; 
+  select(!(gdpPercap))
+except_gdp</code></pre>
+<pre><code>## # A tibble: 1,704 × 5
+##    country     continent  year lifeExp      pop
+##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;
+##  1 Afghanistan Asia       1952    28.8  8425333
+##  2 Afghanistan Asia       1957    30.3  9240934
+##  3 Afghanistan Asia       1962    32.0 10267083
+##  4 Afghanistan Asia       1967    34.0 11537966
+##  5 Afghanistan Asia       1972    36.1 13079460
+##  6 Afghanistan Asia       1977    38.4 14880372
+##  7 Afghanistan Asia       1982    39.9 12881816
+##  8 Afghanistan Asia       1987    40.8 13867957
+##  9 Afghanistan Asia       1992    41.7 16317921
+## 10 Afghanistan Asia       1997    41.8 22227415
+## # ℹ 1,694 more rows</code></pre>
+<p>Q5. Arrange the dataset in ascending order of lifeExp. Q5 Ordenar el
+dataset en orden ascendente según lifeExp.</p>
+<pre class="r"><code># Ahora usando la funcion arrange
+# Me da la informacion orgnaizado de menor a mayor (ascendente)
+gapminder |&gt; 
+  arrange(lifeExp)</code></pre>
+<pre><code>## # A tibble: 1,704 × 6
+##    country      continent  year lifeExp     pop gdpPercap
+##    &lt;fct&gt;        &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;
+##  1 Rwanda       Africa     1992    23.6 7290203      737.
+##  2 Afghanistan  Asia       1952    28.8 8425333      779.
+##  3 Gambia       Africa     1952    30    284320      485.
+##  4 Angola       Africa     1952    30.0 4232095     3521.
+##  5 Sierra Leone Africa     1952    30.3 2143249      880.
+##  6 Afghanistan  Asia       1957    30.3 9240934      821.
+##  7 Cambodia     Asia       1977    31.2 6978607      525.
+##  8 Mozambique   Africa     1952    31.3 6446316      469.
+##  9 Sierra Leone Africa     1957    31.6 2295678     1004.
+## 10 Burkina Faso Africa     1952    32.0 4469979      543.
+## # ℹ 1,694 more rows</code></pre>
+<p>Q6. Arrange the dataset in descending order of lifeExp. Q6 Ordenar el
+dataset en orden descendente según lifeExp.</p>
+<pre class="r"><code># Si quiero que vaya de mayor a menor (descendente), puedo:
+gapminder |&gt; 
+  arrange(desc(lifeExp))</code></pre>
+<pre><code>## # A tibble: 1,704 × 6
+##    country          continent  year lifeExp       pop gdpPercap
+##    &lt;fct&gt;            &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;     &lt;int&gt;     &lt;dbl&gt;
+##  1 Japan            Asia       2007    82.6 127467972    31656.
+##  2 Hong Kong, China Asia       2007    82.2   6980412    39725.
+##  3 Japan            Asia       2002    82   127065841    28605.
+##  4 Iceland          Europe     2007    81.8    301931    36181.
+##  5 Switzerland      Europe     2007    81.7   7554661    37506.
+##  6 Hong Kong, China Asia       2002    81.5   6762476    30209.
+##  7 Australia        Oceania    2007    81.2  20434176    34435.
+##  8 Spain            Europe     2007    80.9  40448191    28821.
+##  9 Sweden           Europe     2007    80.9   9031088    33860.
+## 10 Israel           Asia       2007    80.7   6426679    25523.
+## # ℹ 1,694 more rows</code></pre>
+<p>Q7. Create a new dataset with only the columns year and lifeExp. Q7
+Crear un nuevo dataset con solo las columnas year y lifeExp.</p>
+<pre class="r"><code># Para seleccionar una columna, o unas columnas en particular del dataset, puedo usar la funcion select (lenguaje dplyr)
+col_year_life &lt;- gapminder |&gt; 
+  select(year, 
+         lifeExp)
+col_year_life</code></pre>
+<pre><code>## # A tibble: 1,704 × 2
+##     year lifeExp
+##    &lt;int&gt;   &lt;dbl&gt;
+##  1  1952    28.8
+##  2  1957    30.3
+##  3  1962    32.0
+##  4  1967    34.0
+##  5  1972    36.1
+##  6  1977    38.4
+##  7  1982    39.9
+##  8  1987    40.8
+##  9  1992    41.7
+## 10  1997    41.8
+## # ℹ 1,694 more rows</code></pre>
+<p>Q8. Filter the dataset for the country Cambodia and show only the
+columns year and lifeExp. Q8 Filtrar el dataset para el país Camboya y
+mostrar únicamente las columnas year y lifeExp.</p>
+<pre class="r"><code># Recordatorio: 
+# La funcion filter es de dplyr y es para filas
+# Esto es una manera de hacer subsets por fila
+
+only_Cambodia &lt;- gapminder |&gt; 
+  filter(country == &quot;Cambodia&quot;) |&gt; 
+  select(year, 
+         lifeExp)
+only_Cambodia</code></pre>
+<pre><code>## # A tibble: 12 × 2
+##     year lifeExp
+##    &lt;int&gt;   &lt;dbl&gt;
+##  1  1952    39.4
+##  2  1957    41.4
+##  3  1962    43.4
+##  4  1967    45.4
+##  5  1972    40.3
+##  6  1977    31.2
+##  7  1982    51.0
+##  8  1987    53.9
+##  9  1992    55.8
+## 10  1997    56.5
+## 11  2002    56.8
+## 12  2007    59.7</code></pre>
+<p>Q9. Select only the countries in Africa. Q9. Seleccionar únicamente
+los países que están en África.</p>
+<pre class="r"><code>only_Africa &lt;- gapminder |&gt; 
+  filter(continent == &quot;Africa&quot;) |&gt; 
+  select(country)
+only_Africa</code></pre>
+<pre><code>## # A tibble: 624 × 1
+##    country
+##    &lt;fct&gt;  
+##  1 Algeria
+##  2 Algeria
+##  3 Algeria
+##  4 Algeria
+##  5 Algeria
+##  6 Algeria
+##  7 Algeria
+##  8 Algeria
+##  9 Algeria
+## 10 Algeria
+## # ℹ 614 more rows</code></pre>
+<p>Q10. Create a new column called lifeExp_months that shows life
+expectancy in months. Q10. Crear una nueva columna llamada
+lifeExp_months que muestre la esperanza de vida en meses.</p>
+<pre class="r"><code># Para asegurarme de cuales son las unidades de lifeExp column puedo ver:
+# ?gapminder
+
+# Funcion mutate
+# Me anade nuevas columnas que son funciones de las ya existentes
+new_life &lt;- gapminder |&gt; 
+  mutate(lifeExp_months = lifeExp*12)
+new_life</code></pre>
+<pre><code>## # A tibble: 1,704 × 7
+##    country     continent  year lifeExp      pop gdpPercap lifeExp_months
+##    &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;          &lt;dbl&gt;
+##  1 Afghanistan Asia       1952    28.8  8425333      779.           346.
+##  2 Afghanistan Asia       1957    30.3  9240934      821.           364.
+##  3 Afghanistan Asia       1962    32.0 10267083      853.           384.
+##  4 Afghanistan Asia       1967    34.0 11537966      836.           408.
+##  5 Afghanistan Asia       1972    36.1 13079460      740.           433.
+##  6 Afghanistan Asia       1977    38.4 14880372      786.           461.
+##  7 Afghanistan Asia       1982    39.9 12881816      978.           478.
+##  8 Afghanistan Asia       1987    40.8 13867957      852.           490.
+##  9 Afghanistan Asia       1992    41.7 16317921      649.           500.
+## 10 Afghanistan Asia       1997    41.8 22227415      635.           501.
+## # ℹ 1,694 more rows</code></pre>
 
 
 

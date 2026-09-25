@@ -127,7 +127,7 @@ View(starwars)
 # Trabajando con filas ----------------------------------------------------
 
 
-# Ok ahora quiero la fila de especie que diga droid pero usando el lenguaje de dply
+# Ok ahora quiero la fila de especie que diga droid pero usando el lenguaje de dplyr
 # Para esto, voy a hacer una funcion y le doy nombre
 
 ## La funcion filter es para filas!! 

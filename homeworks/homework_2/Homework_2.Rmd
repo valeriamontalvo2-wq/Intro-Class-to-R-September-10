@@ -4,4 +4,122 @@ author: "Valeria Montalvo Rivera"
 date: "`r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
 ---
 
-hola jijij
+Beginning of tutorial: 
+
+Checking if I have necessary packages: 
+
+```{r}
+# install.packages("gapminder")
+library(gapminder)
+
+# install.packages("dplyr")
+library(dplyr)
+```
+
+Checking out the data: 
+
+```{r}
+data(gapminder)
+head(gapminder)
+```
+
+Q1. What class is the gapminder dataset? Q1. ¿Qué clase es el dataset gapminder?
+
+The gapminder dataset falls into three types of categories: a tibble data frame, a tibble and a data frame.  
+
+```{r}
+class(gapminder)
+```
+
+Q2. Filter a section of gapminder with a life expectancy smaller than 29. Q2. Filtrar una sección de gapminder con esperanza de vida menor a 29.
+
+```{r}
+# La funcion filter es de dplyr y es para filas
+# Esto es una manera de hacer subsets por fila
+# Tengo que coger los que tengan un life expectancy menor a 29
+
+only_29 <- gapminder |> 
+  filter(lifeExp < 29)
+only_29
+```
+
+Q3. Filter the dataset for the country Rwanda and for years greater than 1979. Q3 Filtrar el dataset para el país Ruanda y para años mayores a 1979.
+
+```{r}
+only_Rwanda_1979 <- gapminder |> 
+  filter(country == "Rwanda", 
+         year > 1979)
+only_Rwanda_1979
+```
+
+Q4. Create a new dataset from gapminder excluding the column gdpPercap. Q4 Crear un nuevo dataset a partir de gapminder excluyendo la columna gdpPercap.
+
+```{r}
+# Para seleccionar todos las columnas excepto una en particular usando lenguaje dplyr debo usar select y !
+except_gdp <- gapminder |> 
+  select(!(gdpPercap))
+except_gdp
+```
+
+Q5. Arrange the dataset in ascending order of lifeExp. Q5 Ordenar el dataset en orden ascendente según lifeExp.
+
+```{r}
+# Ahora usando la funcion arrange
+# Me da la informacion orgnaizado de menor a mayor (ascendente)
+gapminder |> 
+  arrange(lifeExp)
+```
+
+Q6. Arrange the dataset in descending order of lifeExp. Q6 Ordenar el dataset en orden descendente según lifeExp.
+
+```{r}
+# Si quiero que vaya de mayor a menor (descendente), puedo:
+gapminder |> 
+  arrange(desc(lifeExp))
+```
+
+Q7. Create a new dataset with only the columns year and lifeExp. Q7 Crear un nuevo dataset con solo las columnas year y lifeExp.
+
+```{r}
+# Para seleccionar una columna, o unas columnas en particular del dataset, puedo usar la funcion select (lenguaje dplyr)
+col_year_life <- gapminder |> 
+  select(year, 
+         lifeExp)
+col_year_life
+```
+
+Q8. Filter the dataset for the country Cambodia and show only the columns year and lifeExp. Q8 Filtrar el dataset para el país Camboya y mostrar únicamente las columnas year y lifeExp.
+
+```{r}
+# Recordatorio: 
+# La funcion filter es de dplyr y es para filas
+# Esto es una manera de hacer subsets por fila
+
+only_Cambodia <- gapminder |> 
+  filter(country == "Cambodia") |> 
+  select(year, 
+         lifeExp)
+only_Cambodia
+```
+
+Q9. Select only the countries in Africa. Q9. Seleccionar únicamente los países que están en África.
+
+```{r}
+only_Africa <- gapminder |> 
+  filter(continent == "Africa") |> 
+  select(country)
+only_Africa
+```
+
+Q10. Create a new column called lifeExp_months that shows life expectancy in months. Q10. Crear una nueva columna llamada lifeExp_months que muestre la esperanza de vida en meses.
+
+```{r}
+# Para asegurarme de cuales son las unidades de lifeExp column puedo ver:
+# ?gapminder
+
+# Funcion mutate
+# Me anade nuevas columnas que son funciones de las ya existentes
+new_life <- gapminder |> 
+  mutate(lifeExp_months = lifeExp*12)
+new_life
+```
