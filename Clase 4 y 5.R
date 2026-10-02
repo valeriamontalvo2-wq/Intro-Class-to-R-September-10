@@ -143,7 +143,7 @@ only_light_dark <- starwars |>
 only_light_dark
 
 # Ahora usando la funcion arrange
-# Esta funcion, usando el height por ejemplo, me da la informacion orgnaizado de mayor a menor
+# Esta funcion, usando el height por ejemplo, me da la informacion orgnaizado de menor a mayor
 starwars |> 
   arrange(height)
 

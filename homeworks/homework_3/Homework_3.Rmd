@@ -1,0 +1,85 @@
+---
+title: "R Tutorial Homework 3"
+author: "Valeria Montalvo Rivera"
+date: "`r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+---
+
+Beginning of tutorial: 
+
+```{r}
+# Checking if I have necessary packages and loading in the data: 
+library(ggplot2)
+data("trees")
+#?trees
+head(trees)
+```
+
+Q1. Create a histogram showing the distribution of Girth.
+Q1. Cree un histograma que muestre la distribución de Girth.
+
+```{r}
+# Lo que ncesitamos son tres cosas minimo: x, y, y que quiero hacer: el geom function
+# Histogram solo necesita un x axis
+
+plot_Girth <- ggplot(data=trees, 
+       aes(x= Girth)) +
+  geom_histogram (fill="pink", color="black") +
+  labs(title = "Distribution of Tree Girth", 
+       x = "Girth (in.)", 
+       y = "Frequency")
+
+plot_Girth
+```
+
+Q2. Create a histogram showing the distribution of Volume.
+Q2. Cree un histograma que muestre la distribución de Volume.
+
+```{r}
+plot_Volume <- ggplot(data=trees, 
+       aes(x= Volume)) +
+  geom_histogram (fill="cyan", color="black") +
+  labs(title = "Distribution of Tree Volume", 
+       x = "Volume (cubic ft.)", 
+       y = "Frequency")
+
+plot_Volume
+```
+
+Q3. Create a scatterplot showing the relationship between Girth and Volume.
+Q3. Cree un gráfico de dispersión que muestre la relación entre Girth y Volume.
+
+```{r}
+plot_trees <- ggplot(data=trees, 
+       aes(x=Girth, y=Volume)) +
+  geom_point(color= "blue") +
+  labs(title="Relationship between Girth and Volume of Black Cherry Trees",
+       x="Girth (in.)", 
+       y="Volume (cubic ft.)") +
+  theme(legend.position = 'none') 
+plot_trees
+  
+```
+
+Q4. Use the Shapiro–Wilk test to assess whether Volume is normally distributed. Report the p-value and state whether the data are normally distributed.
+Q4. Utilice la prueba de Shapiro–Wilk para evaluar si Volume tiene una distribución normal. Reporte el valor de p e indique si los datos tienen una distribución normal.
+
+Answer: After the Shapiro-Wilk test was performed to test if Volume is normally distributed, the p-value obtained was 0.003579 (p < 0.05), which inidicates that there are significant differences between our data and a normal distribution. Therefore, Volume does not follow a normal distribution. 
+
+```{r}
+# Shapiro-Wilk normality test for Volume
+shapiro.test(trees$Volume)
+```
+
+Q5. Repeat the Shapiro–Wilk test for Girth. Report the p-value and state whether Girth is normally distributed.
+Q5. Repita la prueba de Shapiro–Wilk para Girth. Reporte el valor de p e indique si los datos tienen una distribución normal.
+
+Answer: After the Shapiro-Wilk test was performed to test if Girth is normally distributed, the p-value obtained was 0.08893 (p > 0.05), which inidicates that there aren't significant differences between our data and a normal distribution. Therefore, there is not enough evidence to say that Girth deviates from a normal distribution. 
+
+```{r}
+# Shapiro-Wilk normality test for Girth
+shapiro.test(trees$Girth)
+```
+
+
+
+
