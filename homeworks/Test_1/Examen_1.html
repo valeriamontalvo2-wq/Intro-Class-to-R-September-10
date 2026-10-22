@@ -30,6 +30,98 @@ document.addEventListener('DOMContentLoaded', function(e) {
 </script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+
+a.sourceLine {
+pointer-events: auto;
+}
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
 
 
 
@@ -58,13 +150,251 @@ code span.ot { color: #007020; }
 <section class="page-header">
 <h1 class="title toc-ignore project-name">Examen 1</h1>
 <h4 class="author project-author">Valeria Montalvo Rivera</h4>
-<h4 class="date project-date">2026-Oct-22, 01:43 PM</h4>
+<h4 class="date project-date">2026-Oct-22, 04:55 PM</h4>
 </section>
 
 
 
 <section class="main-content">
-
+<p>Midterm exam</p>
+<p>General Instructions / Instrucciones Generales This is the
+Midterm-Exam. Each question is worth 20 points. Este es el examen
+parcial. Cada pregunta vale 20 puntos.</p>
+<p>You must choose 5 out of the 6 questions to answer. Your maximum
+score is therefore 100 points. Debe escoger 5 de las 6 preguntas para
+contestar. Su puntaje máximo será 100 puntos.</p>
+<p>It is highly recommended that all your results, including tables and
+outputs, are always visible in your R Markdown document. Es altamente
+recomendado que todos los resultados, incluidas las tablas y salidas,
+sean siempre visibles en su documento de R Markdown.</p>
+<p>The exam must be completed and submitted during class time, on
+Thursday, October 22, 2025, from 3:00 to 6:00 PM. El examen se debe
+realizar y entregar durante el tiempo de clase, es decir, jueves 22 de
+octubre, de 3 a 6 pm.</p>
+<p>Use R and the tidyverse packages to answer all questions. Utilice R y
+los paquetes tidyverse para contestar todas las preguntas.</p>
+<p>Work independently and make sure your code is reproducible. Trabaje
+de manera independiente y asegúrese de que su código sea
+reproducible.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># Verificando que tengo los paquetes necesarios para comenzar</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># install.packages(&quot;tidyverse&quot;)</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="co"># install.packages(&quot;aod&quot;)</span></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="fu">library</span>(aod)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co"># Creando objetos para comenzar a trabajar el dataset </span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>msleep <span class="ot">&lt;-</span> <span class="fu">glimpse</span>(msleep)</span></code></pre></div>
+<pre><code>## Rows: 83
+## Columns: 11
+## $ name         &lt;chr&gt; &quot;Cheetah&quot;, &quot;Owl monkey&quot;, &quot;Mountain beaver&quot;, &quot;Greater shor…
+## $ genus        &lt;chr&gt; &quot;Acinonyx&quot;, &quot;Aotus&quot;, &quot;Aplodontia&quot;, &quot;Blarina&quot;, &quot;Bos&quot;, &quot;Bra…
+## $ vore         &lt;chr&gt; &quot;carni&quot;, &quot;omni&quot;, &quot;herbi&quot;, &quot;omni&quot;, &quot;herbi&quot;, &quot;herbi&quot;, &quot;carn…
+## $ order        &lt;chr&gt; &quot;Carnivora&quot;, &quot;Primates&quot;, &quot;Rodentia&quot;, &quot;Soricomorpha&quot;, &quot;Art…
+## $ conservation &lt;chr&gt; &quot;lc&quot;, NA, &quot;nt&quot;, &quot;lc&quot;, &quot;domesticated&quot;, NA, &quot;vu&quot;, NA, &quot;dome…
+## $ sleep_total  &lt;dbl&gt; 12.1, 17.0, 14.4, 14.9, 4.0, 14.4, 8.7, 7.0, 10.1, 3.0, 5…
+## $ sleep_rem    &lt;dbl&gt; NA, 1.8, 2.4, 2.3, 0.7, 2.2, 1.4, NA, 2.9, NA, 0.6, 0.8, …
+## $ sleep_cycle  &lt;dbl&gt; NA, NA, NA, 0.1333333, 0.6666667, 0.7666667, 0.3833333, N…
+## $ awake        &lt;dbl&gt; 11.9, 7.0, 9.6, 9.1, 20.0, 9.6, 15.3, 17.0, 13.9, 21.0, 1…
+## $ brainwt      &lt;dbl&gt; NA, 0.01550, NA, 0.00029, 0.42300, NA, NA, NA, 0.07000, 0…
+## $ bodywt       &lt;dbl&gt; 50.000, 0.480, 1.350, 0.019, 600.000, 3.850, 20.490, 0.04…</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>storms <span class="ot">&lt;-</span> storms</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>lizards <span class="ot">&lt;-</span> lizards</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Mirando el dataset</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co"># head(msleep)</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co"># head(storms)</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co"># head(lizards)</span></span></code></pre></div>
+<p>Mammals sleep dataset (msleep)</p>
+<p>Context / Contexto: You are experts in Mammalogy, and your field
+technicians have collected data on sleep behavior in different mammal
+species. Now you must begin exploring how these patterns relate to
+activity and daily rhythms. Ustedes son expertos en Mastozoología, y sus
+técnicos de campo han recolectado datos sobre el comportamiento de sueño
+en distintas especies de mamíferos. Ahora deben comenzar a explorar cómo
+estos patrones se relacionan con la actividad y los ritmos diarios.</p>
+<p><strong>Primera pregunta escogida</strong></p>
+<ol style="list-style-type: decimal">
+<li>Use filter() to subset msleep to only animals who are awake for at
+least 12 hours of the day. Usa filter() para seleccionar del dataset
+msleep solo los animales que están despiertos al menos 12 horas al día.
+Hint: “At least” like saying “greater than or equal to,” i.e. &gt;=
+Sugerencia: “Al menos” significa mayor o igual a (&gt;=).</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Primero para ver la data que estoy trabajando con los mammals</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># View(msleep)</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co"># ?msleep</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co"># Ahora tengo que hacer un subset usando filter() de animales despiertos &gt;=12 horas al dia</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>awake_twelve <span class="ot">&lt;-</span> msleep <span class="sc">|&gt;</span> </span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>  <span class="fu">filter</span>(awake <span class="sc">&gt;=</span> <span class="dv">12</span>) </span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>awake_twelve</span></code></pre></div>
+<pre><code>## # A tibble: 52 × 11
+##    name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake
+##    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;
+##  1 Cow    Bos   herbi Arti… domesticated         4         0.7       0.667  20  
+##  2 North… Call… carni Carn… vu                   8.7       1.4       0.383  15.3
+##  3 Vespe… Calo… &lt;NA&gt;  Rode… &lt;NA&gt;                 7        NA        NA      17  
+##  4 Dog    Canis carni Carn… domesticated        10.1       2.9       0.333  13.9
+##  5 Roe d… Capr… herbi Arti… lc                   3        NA        NA      21  
+##  6 Goat   Capri herbi Arti… lc                   5.3       0.6      NA      18.7
+##  7 Guine… Cavis herbi Rode… domesticated         9.4       0.8       0.217  14.6
+##  8 Grivet Cerc… omni  Prim… lc                  10         0.7      NA      14  
+##  9 Star-… Cond… omni  Sori… lc                  10.3       2.2      NA      13.7
+## 10 Afric… Cric… omni  Rode… &lt;NA&gt;                 8.3       2        NA      15.7
+## # ℹ 42 more rows
+## # ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;</code></pre>
+<p><strong>Segunda pregunta escogida</strong></p>
+<p>Use mutate() to create a new column called percent_day_awake that
+gives the percentage of the day that each species spends awake. Use
+select() with everything() at the end to verify your calculation. Usa
+mutate() para crear una nueva columna llamada percent_day_awake que
+muestre el porcentaje del día que cada especie permanece despierta. Usa
+select() con everything() al final para comprobar que tus cálculos son
+correctos. Hint: A day has 24 hours. The column awake indicates the
+average hours a species is awake per day. Calculate the percentage with
+(col / 24) * 100. Sugerencia: Un día tiene 24 horas. La columna awake
+indica cuántas horas al día, en promedio, está despierta cada especie.
+Calcula el porcentaje con (col / 24) * 100.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># Tengo que usar mutate para crear una columna nueva</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>spending_awake <span class="ot">&lt;-</span> msleep <span class="sc">|&gt;</span> </span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percent_day_awake =</span> (awake<span class="sc">/</span><span class="dv">24</span>)<span class="sc">*</span><span class="dv">100</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  <span class="fu">select</span>(percent_day_awake, <span class="fu">everything</span>())</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>spending_awake</span></code></pre></div>
+<pre><code>## # A tibble: 83 × 12
+##    percent_day_awake name   genus vore  order conservation sleep_total sleep_rem
+##                &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;
+##  1              49.6 Cheet… Acin… carni Carn… lc                  12.1      NA  
+##  2              29.2 Owl m… Aotus omni  Prim… &lt;NA&gt;                17         1.8
+##  3              40   Mount… Aplo… herbi Rode… nt                  14.4       2.4
+##  4              37.9 Great… Blar… omni  Sori… lc                  14.9       2.3
+##  5              83.3 Cow    Bos   herbi Arti… domesticated         4         0.7
+##  6              40   Three… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2
+##  7              63.8 North… Call… carni Carn… vu                   8.7       1.4
+##  8              70.8 Vespe… Calo… &lt;NA&gt;  Rode… &lt;NA&gt;                 7        NA  
+##  9              57.9 Dog    Canis carni Carn… domesticated        10.1       2.9
+## 10              87.5 Roe d… Capr… herbi Arti… lc                   3        NA  
+## # ℹ 73 more rows
+## # ℹ 4 more variables: sleep_cycle &lt;dbl&gt;, awake &lt;dbl&gt;, brainwt &lt;dbl&gt;,
+## #   bodywt &lt;dbl&gt;</code></pre>
+<p>Storm tracks data (storms)</p>
+<p>Context / Contexto: You are part of a climatology research group
+analyzing storm trajectories in the Atlantic. Your team has assembled a
+long-term dataset, and your task is to start identifying temporal trends
+and patterns in storm intensity. Ustedes forman parte de un grupo de
+investigación en climatología que analiza trayectorias de tormentas en
+el Atlántico. Su equipo ha reunido un dataset de largo plazo, y su tarea
+es comenzar a identificar tendencias temporales y patrones de
+intensidad.</p>
+<p><strong>Tercera pregunta escogida:</strong></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Use group_by() and summarise() to calculate the number of storms per
+year. Agrupa los datos por año y calcula el número de tormentas que
+ocurrieron cada año. Hint group_by(col) groups the rows by time, and
+summarise(num_storms = n()) counts how many rows (storms) there are per
+year. Sugerencia: group_by(col) agrupa las filas por tiempo, y
+summarise(num_storms = n()) cuenta cuántas filas (tormentas) hay por
+año.</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co"># Mirando la data que tengo para Stomrms</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># View(storms)</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co"># Tengo que usar groub_by() y summarise() para calcular el numero de tormentas por ano </span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>storms_per_year <span class="ot">&lt;-</span> storms <span class="sc">|&gt;</span> </span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">|&gt;</span> </span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">num_storms =</span> <span class="fu">n</span>())</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>storms_per_year</span></code></pre></div>
+<pre><code>## # A tibble: 50 × 2
+##     year num_storms
+##    &lt;dbl&gt;      &lt;int&gt;
+##  1  1975        238
+##  2  1976        126
+##  3  1977         92
+##  4  1978        152
+##  5  1979        324
+##  6  1980        335
+##  7  1981        311
+##  8  1982        111
+##  9  1983         88
+## 10  1984        342
+## # ℹ 40 more rows</code></pre>
+<p><strong>Cuarta pregunta escogida:</strong></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Use filter() to subset storms to only storms with wind speeds
+greater than 50 knots, then use arrange() to sort by wind descending.
+Filtra el dataset para quedarte solo con tormentas que tengan velocidad
+de viento mayor a 50 nudos, y luego ordénalas de mayor a menor velocidad
+de viento. Hint Use filter(col &gt; 50) to select strong storms, and
+arrange(desc(col)) to sort the results from highest to lowest.
+Sugerencia: Usa filter(col &gt; 50) para seleccionar las tormentas
+fuertes, y arrange(desc(col)) para ordenar los resultados de mayor a
+menor.</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># Quiero hacer un subset de tormentas con velocidades de viento major de 50 nudos utilizando filter() y arrange()</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>storms_50_knots <span class="ot">&lt;-</span> storms <span class="sc">|&gt;</span> </span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>  <span class="fu">filter</span>(wind <span class="sc">&gt;</span><span class="dv">50</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(wind))</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>storms_50_knots</span></code></pre></div>
+<pre><code>## # A tibble: 7,406 × 13
+##    name     year month   day  hour   lat  long status    category  wind pressure
+##    &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;fct&gt;        &lt;dbl&gt; &lt;int&gt;    &lt;int&gt;
+##  1 Allen    1980     8     7    18  21.8 -86.4 hurricane        5   165      899
+##  2 Gilbert  1988     9    14     0  19.7 -83.8 hurricane        5   160      888
+##  3 Wilma    2005    10    19    12  17.3 -82.8 hurricane        5   160      882
+##  4 Dorian   2019     9     1    16  26.5 -77   hurricane        5   160      910
+##  5 Dorian   2019     9     1    18  26.5 -77.1 hurricane        5   160      910
+##  6 Allen    1980     8     5    12  15.9 -70.5 hurricane        5   155      932
+##  7 Allen    1980     8     7    12  21   -84.8 hurricane        5   155      910
+##  8 Allen    1980     8     8     0  22.2 -87.9 hurricane        5   155      920
+##  9 Allen    1980     8     9     6  25   -94.2 hurricane        5   155      909
+## 10 Gilbert  1988     9    14     6  19.9 -85.3 hurricane        5   155      889
+## # ℹ 7,396 more rows
+## # ℹ 2 more variables: tropicalstorm_force_diameter &lt;int&gt;,
+## #   hurricane_force_diameter &lt;int&gt;</code></pre>
+<p>A Comparison of Site Preferences of Two Species of Lizard
+(lizards)</p>
+<p>Context / Contexto: You are field ecologists studying habitat use by
+two Anolis species. Your team has spent weeks observing their behavior
+at different times of day and in varying microhabitats. Now it’s time to
+analyze the data to test your hypotheses. Ustedes son ecólogos de campo
+que estudian el uso del hábitat de dos especies de Anolis. Su equipo ha
+pasado semanas observando su comportamiento a distintas horas del día y
+en diferentes microhábitats. Ahora es momento de analizar los datos para
+poner a prueba sus hipótesis</p>
+<p><strong>Quinta pregunta escogida</strong></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Determine which Site and Diameter combination has the highest total
+grahami. Determina cuál combinación de Sitio y Diámetro tiene el total
+de grahami más alto. Hint: group_by(col1, col2) %&gt;% summarise(new_var
+= sum(var)) %&gt;% arrange(desc(new_var)) Sugerencia: Usa group_by(col1,
+col2) %&gt;% summarise(new_var = sum(var)) %&gt;%
+arrange(desc(new_var))</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Determinando cual lugar tiene la mayor cantidad de grahami</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>cantidad_grahami <span class="ot">&lt;-</span> lizards <span class="sc">|&gt;</span> </span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">group_by</span>(Site, Diameter) <span class="sc">|&gt;</span> </span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="fu">summarise</span>(<span class="at">new_var =</span> <span class="fu">sum</span>(grahami)) <span class="sc">|&gt;</span> </span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(new_var))</span></code></pre></div>
+<pre><code>## `summarise()` has regrouped the output.
+## ℹ Summaries were computed grouped by Site and Diameter.
+## ℹ Output is grouped by Site.
+## ℹ Use `summarise(.groups = &quot;drop_last&quot;)` to silence this message.
+## ℹ Use `summarise(.by = c(Site, Diameter))` for per-operation grouping
+##   (`?dplyr::dplyr_by`) instead.</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>cantidad_grahami</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 3
+## # Groups:   Site [2]
+##   Site  Diameter new_var
+##   &lt;fct&gt; &lt;fct&gt;      &lt;dbl&gt;
+## 1 Shade D &lt;= 2       220
+## 2 Shade D &gt; 2        122
+## 3 Sun   D &lt;= 2        65
+## 4 Sun   D &gt; 2         24</code></pre>
 </section>
 
 
