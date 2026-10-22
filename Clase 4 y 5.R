@@ -106,7 +106,7 @@ classify_wind <- function(wind){
 # Ahora para crear una nueva columna y guardar la informacion de la clasificacion del viento ahi
 
 hurricane2$windclass <- sapply(
-  hurricane$wind, 
+  hurricane1$wind, 
   classify_wind
 )
 

@@ -1,0 +1,10 @@
+---
+title: "Examen 1"
+author: "Valeria Montalvo Rivera"
+date: "`r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
