@@ -1,0 +1,105 @@
+title: "R Tutorial Homework 4"
+author: "Valeria Montalvo Rivera"
+date: "`r format(Sys.time(), '%Y-%b-%d, %I:%M %p')`"
+---
+
+Beginning of R-tutorial:T-test
+
+Context:
+dataset: Butterfly Pesticides Data
+The dataset reports the mean wing length for 80 butterflies. 40 of them are the control group (labeled as Group1) and 40 are the experimental, which were treated with pesticides during the larval stage (labeled Group2). 
+
+Beginning of Coding: 
+
+```{r, message=FALSE, warning=FALSE}
+# Checking I have necessary packages
+ library(tidyverse)
+ library(lessR)
+ library(readxl)
+ library(BSDA)
+```
+
+```{r}
+# Loading in the data
+butterfly <- read_excel("butterflies_pesticides.xlsx")
+head(butterfly)
+
+#The wing-length measurements come from different individual butterflies, so the observations in Group 1 do not depend on observations in Group 2. We are dealing with independent groups in our dataset. 
+```
+
+**Q1. Normality test / Prueba de normalidad (10pts)**
+
+```{r}
+
+# Primero voy a separar por grupos
+library(dplyr)
+
+group1 <- butterfly |> 
+  filter(Group == "group1")
+group1
+
+group2 <- butterfly |> 
+  filter(Group == "group2")
+group2
+
+# Ahora para el normality test
+shapiro.test(group1$`Wing Length`)
+
+shapiro.test(group2$`Wing Length`)
+# Los p-values mayores a 0.05 nos indican que no hay diferencias significativas de una distribucion normal a la distribucion de los datos en Group 1 y  en Group 2. 
+
+```
+
+**Q2. Equality of variances test / Prueba de igualdad de varianzas (10pts)**
+
+```{r}
+# Ahora para probar la varianza entre el Grupo 1 y Grupo 2
+var.test(group1$`Wing Length`, group2$`Wing Length`)
+# Since the p-value is lesser than 0.05, we reject the null hypothesis. There is sufficient evidence to conclude that the variances between the two groups are significantly different.
+```
+
+**Q3. Statistical test / Prueba estadística (20pts)**
+
+```{r, warning=FALSE}
+t.test(
+  group1$`Wing Length`, 
+  group2$`Wing Length`,
+  alternative= c("two.sided"),
+  mu=0, 
+  paired=FALSE,
+  var.equal=FALSE
+)
+
+# null hypothesis: the mean wing length is equal between Group 1 and Group 2. 
+# alternative hypothesis: the mean wing length is different between Group 1 and Group 2. 
+
+# Because the p-value obtained in the t-test is lesser than 0.05, we reject the null hypothesis. There is sufficient evidence to conclude that the wing lengths between the two groups are significantly different.
+```
+
+```{r, warning=FALSE}
+# Ahora para Cohen's
+
+# Instalando paquetes ncesarios 
+# install.packages("lsr")
+library(lsr)
+cohensD(`Wing Length` ~ Group, data = butterfly)
+
+# This result indicates a large effect size. 
+```
+
+**Q4. ggplot (20pts)**
+
+```{r, warning=FALSE}
+library(ggplot2)
+# Ahora para graficar
+ggplot(butterfly, aes(x=Group,
+                    y=`Wing Length`, 
+                    fill = Group)) +
+  geom_boxplot()
+```
+
+**Q5. Summary paragraph / Párrafo de resumen (40pts)**
+
+We investigated whether there was a significant difference in butterfly wing length for Group 1 (control) and Group 2 (experimental), which were exposed to pesticides during the larval stage. Using a Welch Two Sample t-test, we analyzed 40 observations from Group 1 and 40 observations from Group 2. The results indicated a statistically significant and biologically meaningful difference in wing length between the groups ($t_{66.03} = 3.98, p < 0.00017, ES= 0.89$). These findings may provide insight into the negative impact pesticides have on butterfly wing development, even during early larval stages. 
+
+
